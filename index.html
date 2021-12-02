@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo - Revenda de Veículos</title>
+  <!-- importa o css do bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- importa o js do bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <!-- importa o css do fontawesome (biblioteca de icone) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- importa o css do animate (biblioteca de animacao) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.1/dist/sweetalert2.all.min.js"></script>
+  <script src="js/app.js" defer></script>
+
+</head>
+
+<body>
+
+  <header style="margin-bottom: 5rem;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">App Revenda</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" id="linkHome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" id="linkCadastrar">Cadastrar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Aplicativo - Revenda de Carros</h1>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette" id="boxCadastro">
+        <h2>Cadastrar Novo</h2>
+        <div class="col-3">
+          <div class="input-group">
+            <input type="text" class="form-control" id="marca" placeholder="Marca do carro" required>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="input-group">
+            <input type="text" class="form-control" id="modelo" placeholder="Modelo do carro" required>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="input-group">
+            <input type="number" class="form-control" id="ano" placeholder="Ano do carro" required>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="input-group">
+            <input type="number" class="form-control" id="valor" placeholder="Valor R$" required>
+          </div>
+        </div>
+        <div class="col-2">
+          <button id="salvar" class="w-100 btn btn-success" type="button"><i class="fas fa-plus-square"></i> Novo</button>
+        </div>
+      </div>
+
+
+      <div class="row featurette" id="boxPesquisa">
+        <h2>Pesquisar</h2>
+        <div class="col-6">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input type="text" class="form-control" id="pesquisar" placeholder="Pesquisar" required>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input type="number" class="form-control" id="limite"
+              placeholder="Qual o valor máximo que o cliente deseja pagar?" required>
+          </div>
+        </div>
+        <div class="col-1">
+          <button id="buscar" class="w-100 btn btn-success" type="button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <h2>Carros da loja</h2>
+        <table class="table table-hover table-bordered ">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">MARCA</th>
+              <th scope="col">MODELO</th>
+              <th scope="col">ANO</th>
+              <th scope="col">VALOR</th>
+            </tr>
+          </thead>
+          <tbody id="listaCarros">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer class="container">
+      <br>
+      <p class="text-center">&copy; 2017–2021 - SENAI - DF. &middot; Todos os direitos reservados &middot;</p>
+    </footer>
+  </main>
+</body>
+
+</html>
